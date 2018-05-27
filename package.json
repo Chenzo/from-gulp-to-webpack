@@ -1,0 +1,31 @@
+{
+  "name": "from-gulp-to-webpack",
+  "version": "1.0.0",
+  "description": "just giving webpack a go...",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --mode production",
+    "watch": "webpack --watch --mode development"
+  },
+  "keywords": [],
+  "author": "Chenzo",
+  "license": "ISC",
+  "browserslist": [
+    "last 2 versions"
+  ],
+  "devDependencies": {
+    "css-loader": "^0.28.11",
+    "file-loader": "^1.1.11",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "img-loader": "^3.0.0",
+    "mini-css-extract-plugin": "^0.4.0",
+    "node-sass": "^4.9.0",
+    "postcss-loader": "^2.1.5",
+    "sass-loader": "^7.0.1",
+    "style-loader": "^0.21.0",
+    "url-loader": "^1.0.1",
+    "webpack": "^4.9.1",
+    "webpack-cli": "^2.1.4"
+  }
+}
