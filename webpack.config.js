@@ -1,9 +1,15 @@
+const path = require('path');
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   devtool: "source-map",
+  output: {
+    // options related to how webpack emits results
+    path: path.resolve(__dirname, "www"), // string
+  },
   module: {
+
     rules: [
       {
         test: /\.html$/,
