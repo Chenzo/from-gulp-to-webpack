@@ -6,9 +6,10 @@
 
 
 
-* npm run build
-* npm start      
-* npm run watch    
+* `npm run build`
+* `npm start`      
+* `npm run watch`   
+* `docker-compose -f config/docker/docker-compose.yml up --build`
 
 
 Info gleaned from here:

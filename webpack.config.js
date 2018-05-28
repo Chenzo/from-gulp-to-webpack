@@ -1,6 +1,10 @@
 const path = require('path');
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+
+
+const DEV = process.env.NODE_ENV === 'development';
 
 module.exports = {
   devtool: "source-map",
@@ -54,6 +58,15 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: "[name].css",
       chunkFilename: "[id].css"
-    })
-  ]
+    }),
+    DEV &&
+    new BrowserSyncPlugin({
+      notify: false,
+      host: 'localhost',
+      port: 4000,
+      logLevel: 'silent',
+      files: ['./*.php'],
+      proxy: 'http://localhost:8088/',
+    }),
+  ].filter(Boolean),
 };
