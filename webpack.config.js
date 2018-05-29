@@ -4,16 +4,15 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
 
-const DEV = process.env.NODE_ENV === 'development';
+//const DEV = process.env.NODE_ENV === 'development';
 
 module.exports = {
   devtool: "source-map",
   output: {
-    // options related to how webpack emits results
+    //change the output directory
     path: path.resolve(__dirname, "www"), // string
   },
   module: {
-
     rules: [
       {
         test: /\.html$/,
@@ -52,14 +51,13 @@ module.exports = {
   },
   plugins: [
     new HtmlWebPackPlugin({
-      template: "src/index.html",
-      filename: "./index.html"
+      template: "src/index.php",
+      filename: "./index.php"
     }),
     new MiniCssExtractPlugin({
       filename: "[name].css",
       chunkFilename: "[id].css"
     }),
-    DEV &&
     new BrowserSyncPlugin({
       notify: false,
       host: 'localhost',
