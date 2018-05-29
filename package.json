@@ -5,7 +5,6 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --open --mode development",
-    "docker": "node ./scripts/start.js",
     "build": "webpack --mode production",
     "watch": "webpack --watch --mode development"
   },

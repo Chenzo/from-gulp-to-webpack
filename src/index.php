@@ -7,8 +7,8 @@
 </head>
 <body>
     <section class="main">
-        <h1>Testing Webpack dev server - switched to PHP</h1>
-        <h5>We should be syncing this...</h5>
+        <h1>Testing without Webpack dev server - switched to PHP</h1>
+        <h5>We should be syncing this... only php?</h5>
         <img src="img/kidcreamcones.jpg">
         <img src="img/empire.png">
     </section>

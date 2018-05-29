@@ -5,6 +5,8 @@
 - Chenzo
 
 
+> this thing isn't hot reloading the CSS for some reason
+
 
 * `npm run build`
 * `npm start`      

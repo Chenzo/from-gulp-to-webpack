@@ -15,7 +15,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.html$/,
+        test: /\.(php|html)$/,
         use: [{ loader: "html-loader", options: { minimize: true } }]
       },
       {
@@ -59,12 +59,16 @@ module.exports = {
       chunkFilename: "[id].css"
     }),
     new BrowserSyncPlugin({
-      notify: false,
+
       host: 'localhost',
       port: 4000,
-      logLevel: 'silent',
-      files: ['./*.php'],
       proxy: 'http://localhost:8088/',
+    },
+    // plugin options
+    {
+      /* notify: false, */
+      /* logLevel: 'silent', */
+      files: ['./*.php', '*./*.css']
     }),
   ].filter(Boolean),
 };
