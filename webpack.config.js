@@ -5,8 +5,11 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 module.exports = {
   devtool: "source-map",
   entry: {
-    'pageone': './src/js/pageone.js',
-    'test': './src/js/test.js',
+    'pageone': [
+      './src/js/pageone.js',
+      './src/_scss/main.scss'
+      ],
+    'test': './src/js/test.js'
   },
   output: {
     // options related to how webpack emits results
@@ -34,7 +37,7 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: "[name].css",
+      filename: "css/[name].css",
       chunkFilename: "[id].css"
     })
   ]
