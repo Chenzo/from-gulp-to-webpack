@@ -4,32 +4,18 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   devtool: "source-map",
+  entry: {
+    'pageone': './src/js/pageone.js',
+    'test': './src/js/test.js',
+  },
   output: {
     // options related to how webpack emits results
     path: path.resolve(__dirname, "www"), // string
+    filename: 'js/[name].js',
+    sourceMapFilename: 'js/maps/[name].js.map'
   },
   module: {
-
     rules: [
-      {
-        test: /\.html$/,
-        use: [{ loader: "html-loader", options: { minimize: true } }]
-      },
-      {
-        test: /\.(png|jpe?g)/i,
-        use: [
-          {
-            loader: "url-loader",
-            options: {
-              name: "./img/[name].[ext]",
-              limit: 10000
-            }
-          },
-          {
-            loader: "img-loader"
-          }
-        ]
-      },
       {
         test: /\.scss$/,
         use: [
@@ -47,10 +33,6 @@ module.exports = {
     ]
   },
   plugins: [
-    new HtmlWebPackPlugin({
-      template: "src/index.html",
-      filename: "./index.html"
-    }),
     new MiniCssExtractPlugin({
       filename: "[name].css",
       chunkFilename: "[id].css"
